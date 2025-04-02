@@ -1,89 +1,91 @@
 import React from 'react';
-import { View, Text, StyleSheet,Image } from 'react-native';
-import {Tabs, Redirect} from 'expo-router';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import { Tabs, Redirect } from 'expo-router';
 
- import {icons} from '../../constants';
+import { icons } from '../../constants';
 
-const TabIcon = ({color,icon,name,focused}) => {
+const TabIcon = ({ color, icon, name, focused }) => {
     return (
-        <View className='w-16 items-center justify-content'> {/* Increased width */}
+        <View className="w-16 items-center justify-center">
             <Image
-                source={icons.home}
+                source={icon} // Corrected to use the passed `icon` prop
                 tintColor={color}
-                resizeMode='contain'
-                className='w-6 h-6'
+                resizeMode="contain"
+                className="w-6 h-6"
             />
-            <Text className={`${focused? 'font-psemibold':'font-pregular'} text-xs text-center`}>{name}</Text> {/* Added text-center */}
+            <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs text-center`}>
+                {name}
+            </Text>
         </View>
     );
-}
+};
 
 const TabsLayout = () => {
     return (
         <>
-            <Tabs screenOptions={{headerShown: false, tabBarShowLabel: false}}>
-                <Tabs.Screen 
+            <Tabs screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
+                <Tabs.Screen
                     name="home"
                     options={{
                         title: 'Home',
                         headerShown: false,
-                        tabBarIcon: ({color,focused}) => (
+                        tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 color={color}
                                 focused={focused}
                                 icon={icons.home}
-                                name='Home'
+                                name="Home"
                             />
-                        )   
-                    }} 
+                        )
+                    }}
                 />
 
-<Tabs.Screen 
+                <Tabs.Screen
                     name="create"
                     options={{
                         title: 'Create',
                         headerShown: false,
-                        tabBarIcon: ({color,focused}) => (
+                        tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 color={color}
                                 focused={focused}
                                 icon={icons.plus}
-                                name='Create'
+                                name="Create"
                             />
-                        )   
-                    }} 
+                        )
+                    }}
                 />
 
-<Tabs.Screen 
+                <Tabs.Screen
                     name="profile"
                     options={{
                         title: 'Profile',
                         headerShown: false,
-                        tabBarIcon: ({color,focused}) => (
+                        tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 color={color}
                                 focused={focused}
                                 icon={icons.profile}
-                                name='Profile'
+                                name="Profile"
                             />
-                        )   
-                    }} 
+                        )
+                    }}
                 />
 
-<Tabs.Screen 
+                <Tabs.Screen
                     name="bookmark"
                     options={{
                         title: 'Bookmark',
                         headerShown: false,
-                        tabBarIcon: ({color,focused}) => (
+                        tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 color={color}
                                 focused={focused}
                                 icon={icons.bookmark}
-                                name='Bookmark'
+                                name="Bookmark"
                             />
-                        )   
-                    }} 
+                        )
+                    }}
                 />
             </Tabs>
         </>
