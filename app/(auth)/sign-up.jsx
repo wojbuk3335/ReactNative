@@ -3,8 +3,8 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const SightUp = () => {
     return (
-        <View >
-            <Text>SightUp</Text>
+        <View>
+            <Text style={{ color: "#000000" }}>SightUp</Text>
         </View>
     );
 };

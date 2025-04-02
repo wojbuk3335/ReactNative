@@ -8,7 +8,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
   return (
     <View
       className="flex items-center justify-center"
-      style={{ width: 60, paddingTop: 10 }} // Added paddingTop
+      style={{ width: 60, paddingTop: 10 }}
     >
       <Image
         source={icon}
@@ -18,7 +18,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
       />
       <Text
         className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
-        style={{ color: color, textAlign: "center" }}
+        style={{ color: "#000000", textAlign: "center" }} // Ensure text color is black
         numberOfLines={1}
       >
         {name}
