@@ -7,6 +7,7 @@ import { images } from "../../constants";
 import CustomButton from '../../components/CustomButton';
 import FormField from "../../components/FormField";
 
+
 const SignUp = () => {
 
   const [isSubmitting, setSubmitting] = useState(false);
@@ -16,8 +17,9 @@ const SignUp = () => {
     password: "",
   });
 
-    const submit = () => {
-    }
+  const submit = async () => {
+      alert(form.password);
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full flex-1 ">
